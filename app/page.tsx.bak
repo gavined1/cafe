@@ -1,0 +1,68 @@
+import { AuthButton } from "@/components/auth-button";
+import { FeaturedItems } from "@/components/carousel-items";
+import { Hero } from "@/components/hero";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen flex flex-col items-center">
+      <div className="flex-1 w-full flex flex-col items-center">
+        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
+          <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
+            <div className="flex gap-5 items-center font-semibold">
+              <Link href={"/"}>Café</Link>
+            </div>
+            <div className="flex items-center gap-4">
+              <AuthButton />
+              <ThemeSwitcher />
+            </div>
+          </div>
+        </nav>
+
+        <section className="w-full bg-muted/50">
+          <div className="max-w-5xl mx-auto py-8 px-4">
+            <h2 className="text-3xl font-bold text-center">Featured Items</h2>
+            <p className="text-muted-foreground text-center mt-2 mb-8">Discover our most popular drinks and treats</p>
+            <FeaturedItems />
+          </div>
+        </section>
+
+        <div className="flex-1 w-full flex flex-col gap-20 max-w-5xl p-5">
+          <Hero />
+          <div className="flex-1 flex flex-col gap-16 px-4">
+            </section>
+            
+            <section className="text-center space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-3xl font-bold">Visit Us Today</h2>
+                <p className="text-muted-foreground max-w-xl mx-auto">
+                  Experience the perfect blend of comfort and taste at our café. 
+                  Open daily from 7 AM to 8 PM.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto text-left">
+                <div className="space-y-2">
+                  <h3 className="font-semibold">Location</h3>
+                  <p className="text-sm text-muted-foreground">123 Coffee Street<br />Café City, ST 12345</p>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-semibold">Hours</h3>
+                  <p className="text-sm text-muted-foreground">Mon-Fri: 7 AM - 8 PM<br />Sat-Sun: 8 AM - 7 PM</p>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-semibold">Contact</h3>
+                  <p className="text-sm text-muted-foreground">Phone: (555) 123-4567<br />Email: hello@cafe.com</p>
+                </div>
+              </div>
+            </section>
+          </main>
+        </div>
+
+        <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
+          <p>© 2025 Café. All rights reserved.</p>
+        </footer>
+      </div>
+    </main>
+  );
+}
